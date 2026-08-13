@@ -13,7 +13,9 @@ body{
   grid-template-areas:
     "sidebar header"
     "sidebar main";
+   
   min-height: 100vh;
+
   
 }
 .dashboard-header{
@@ -68,12 +70,12 @@ body{
 
 .search-box input{
     padding:5px 20px 5px 20px ;
-    background-color: #4e4a4a;
+    background-color: #33333d;
     color:#ffffff;
     border-color: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 6px;
     outline: none;
-     width: 300px;        
+     max-width: 300px;        
   max-width: 100%; */
     
 }
@@ -89,6 +91,7 @@ body{
 
 
 .side-bar{
+
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
@@ -96,7 +99,7 @@ body{
     padding: 0.5rem 2rem ;
     height:auto;
     position: fixed;
-    background-color: #666666;
+    background-color: #33333d;
 }
 .nav-menu {
     padding:2rem;
@@ -117,6 +120,9 @@ body{
         background-color: #373a47;
       }
      
+}
+.mobile-btn{
+    display: none;
 }
 .help{
     margin-top: 1rem;
@@ -188,16 +194,18 @@ main{
 .panel-grid{
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
-    margin:30px;
+    margin:15px;
     gap:2rem;
     width:100%;
+    object-fit: contain;
+   
 }
 .welcome-card,.feedback-card,.refferal-card,.performance-summary{
     width: 90%;
     border: 1px solid rgba(255, 255, 255, 0.174);
     border-radius: 15px;
     padding: 15px;
-    background-color: #666666;
+    background-color: #33333d;
 }
 .mark-j-img ,.f{
     float:left;
@@ -249,7 +257,8 @@ main{
 .team-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5px;
+   
+    
 }
 
 .team-member-grid {
@@ -261,6 +270,7 @@ main{
     border-radius: 15px;
     background-color: #2a2a32;
     max-width:150px;
+    width: 100%;
     &:hover{
         background-color: #2a2a32b8;
     }
@@ -274,3 +284,69 @@ main{
     color:rgb(5, 132, 5);
     font-size:small;
 }
+@media (max-width: 850px) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 14px 14px 40px;
+    
+  }
+  .nav-menu ,.account-action,.help{
+    display: none;
+  }
+  .side-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  }
+  .mobile-btn {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  gap: 10px; 
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+ 
+    
+  }
+  .mobile-btn a{
+    text-decoration: none;
+    color:black;
+    &:hover{
+        background-color: #373a47;
+      }
+
+
+  }
+
+  .search-box {
+    flex: 1;
+    width: auto;
+  }
+
+  
+  main {
+    padding: 0;
+  }
+
+  .panel-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    justify-content: center;
+  }
+  
+}
+
